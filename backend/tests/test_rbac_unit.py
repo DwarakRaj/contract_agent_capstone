@@ -9,7 +9,9 @@ sys.path.insert(0, os.getcwd())
 
 from backend.governance.rbac import RBACManager, UserRole, Permission, requires_permission
 
+import pytest
 class TestRBAC(unittest.IsolatedAsyncioTestCase):
+    pytestmark = pytest.mark.unit
     
     def test_role_permissions(self):
         """Test that roles have expected permissions"""

@@ -1,13 +1,6 @@
-import sys
-import os
-from unittest.mock import MagicMock, patch
+import pytest
 
-# Add project root to path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from backend.infrastructure.audit_logger import AuditLogger, AuditEventType
-from backend.infrastructure.agent_audit_service import AgentAuditService
-
+@pytest.mark.system
 def test_agent_audit_service_lifecycle():
     """Test the specialized agent audit service directly with mocks"""
     mock_repo = MagicMock()

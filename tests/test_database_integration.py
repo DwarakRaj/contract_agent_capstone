@@ -5,10 +5,12 @@ Test Database Integration for CUAD Features
 
 import sys
 import os
+import pytest
 
 # Add backend to path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'backend'))
 
+@pytest.mark.integration
 def test_database_schema():
     """Test database schema has CUAD fields"""
     print("Testing Database Schema...")

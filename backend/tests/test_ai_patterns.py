@@ -1,13 +1,6 @@
-"""Test AI Patterns implementation."""
+import pytest
 
-import asyncio
-import sys
-import os
-
-# Add backend to path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-
+@pytest.mark.functional
 async def test_react_pattern():
     """Test ReACT pattern for iterative clause extraction."""
     from backend.agents.patterns.react_agent import ReACTAgent

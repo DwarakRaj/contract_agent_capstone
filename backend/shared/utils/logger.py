@@ -12,6 +12,10 @@ load_dotenv()
 # ContextVar to store the correlation ID for the current async flow
 correlation_id_var: contextvars.ContextVar[str] = contextvars.ContextVar("correlation_id", default="")
 
+def set_correlation_id(correlation_id: str):
+    """Set the correlation ID for the current context."""
+    correlation_id_var.set(correlation_id)
+
 class JsonFormatter(logging.Formatter):
     """
     A unified standard JSON formatter that automatically injects the active correlation_id
